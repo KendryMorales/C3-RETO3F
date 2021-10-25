@@ -30,7 +30,7 @@ function mostrarMessage(){
                 $("#resultadoMessage").append("<td>"+item[i].client.name+"</td>");
                 $("#resultadoMessage").append("<td>"+item[i].cabin.name+"</td>");
                 $("#resultadoMessage").append("<td>"+item[i].messageText+"</td>");
-                $("#resultadoMessage").append('<td><a class="btnO" onclick="obtenerMessageEspecifico('+item[i].idMessage+')">Detalle</a></td>');
+                $("#resultadoMessage").append('<td><a class="btnO" onclick="obtenerMessageEspecifico('+item[i].idMessage+')">Editar</a></td>');
                 $("#resultadoMessage").append('<td><button class="btnB" title="Borrar"onclick="borrarMessage('+item[i].idMessage+')">&#10007</button></td>');
                 $("#resultadoMessage").append("</tr>");
             }
