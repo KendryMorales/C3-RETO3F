@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    /* overflow: scroll;    */
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background:url("/img/paraiso.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-attachment: fixed; */
+    position: absolute;
+    top: 0;
+}
+
+.menu-index{
+    z-index: 10;
+    text-align: left;
+    padding: 5px;
+    position: relative;
+    top: 0;
+    right: 0;
+    border: none;
+    height: 60px;
+    width: 100%;
+}
+
+.menu{
+    width: 100%;
+    height: 60px;
+    position: relative;
+    top: 0;
+    right: 0;
+    text-align: left;
+    padding: 5px;
+    border: none;
+    background-image: radial-gradient(circle at 50% -20.71%, #8ab7cc 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%);
+}
+
+.titulo{
+    font-family: 'Ephesis', cursive, Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 40px;
+    text-align: left;
+    padding: 2px;
+    padding-left: 30px;
+    width: 40%;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 600;
+}
+
+.lista{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.items{
+    margin-left: 30px;
+}
+
+.link{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 900;
+}
+
+.link:hover{
+    color:#d0dafd;
+    /* color:rgb(214, 226, 43); */
+}
+
+/** MAIN***/
+.seccion{
+    width: 100%;
+    height: auto;    
+}
+
+.container{
+    width: 90%;
+    max-width: 1000px;
+    height: 890px;
+    margin: auto;
+    overflow: hidden;
+    padding: 60px 0;
+}
+
+.subtitulo{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.textarea {
+    width: 300px;
+    height: 100px;
+    resize: none;
+    margin: auto;
+    display: block;
+    outline: none;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.input{
+    width: 300px;
+    height: 30px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    outline: none;
+    /* text-transform: uppercase; */
+}
+
+.grupo-input{
+    width: 100%;
+}
+
+.grupo-btn{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.botones, .boton1{
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.btnB{
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border: none;
+    border-radius: 50%;
+    color: crimson;
+    background: transparent;
+}
+
+.btnO{
+    color: blue;
+    text-align: center;
+    /* background:green; */
+}
+.btnO:hover{
+    color: blueviolet;
+    cursor: pointer;
+    /* background:rgba(0, 128, 0, 0.685); */
+}
+
+.btnB:hover{
+    background: rgba(220, 20, 60, 0.678);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Estilos de la tabla */
+
+.boton1{
+    width: 150px;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.tabla{
+    max-width: 90%;
+    max-height: 400px;
+    margin-top: 45px;
+    margin: auto;
+    overflow-y:auto; 
+}
+
+table {    
+    z-index: 2;
+    width: 100%;
+    height: 200px; 
+    margin: auto;
+    font-size: 12px;    
+    text-align: center;    
+    border-collapse: collapse;
+    /* display: table; */
+}
+
+th {  
+    position: sticky;
+    top: 0;   
+    font-size: 13px;     
+    font-weight: normal;     
+    padding: 8px;     
+    background: #3E94D0;
+    /* border-bottom: 1px solid #fff;  */
+    color: #fff; 
+    border-collapse: collapse; 
+    border: 1px solid transparent;
+}    
+
+td {    
+    padding: 8px;     
+    background: #FAFAFA;     
+    border-bottom: 1px solid #f2f2f2;
+    color: #111;    
+    border-top: 1px solid transparent; 
+    border-collapse: collapse; 
+    /* text-align: center; */
+}
+
+
+/* Estilos para el scroll */
+.tabla::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.tabla::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.tabla::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.tabla::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.tabla::-webkit-scrollbar-thumb {
+    /* background-color: #797979; */
+    background-color: #79797942;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.tabla::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+
+/* Pie de pagina */
+.footer{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    background:#3E94D0;
+    border: 1px transparent;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-pie{
+    text-align: center;
+    color: #fff;
+    line-height: 50px;
+}
+
+/* calificacion */
+#star {
+    width: 300px;
+    margin: 0 auto;
+    height: 30px;
+}
+
+.clasificacion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.radio{
+    display: none;
+}
+
+#star input + label{
+    float: right;
+    cursor: pointer;
+    font-size: 40px;
+    margin-left: 10px;
+    color: #838383;
+    transition: all 0.2s ease;
+    
+}
+
+#star label:hover ~ label,
+#star input:focus ~ label,
+#star input:checked ~ label {
+  color: #fd4;
+}
+
+#star label:active{
+    transform: scale(0.8);
+    transition: 0.3s ease;
+}
+
+#star input#radio5:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 5px #952;
+}
+
+.texto{
+    width: 300px;
+    text-align: center;
+}

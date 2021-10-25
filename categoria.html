@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/categoria.js"></script>
+    <title>Reto2</title>
+
+
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo">Paraiso Tropical</h1>
+        <nav class="menu">
+            <h1 class="titulo">Paraiso Tropical</h1>
+            <ul class="lista">
+                <li class="items"><a class="link" href="index.html">Inicio</a></li>
+                <li class="items"><a class="link" shref="categoria.html">Categoria</a></li>
+                <li class="items"><a class="link" href="cabin.html">Cabañas</a></li>
+                <li class="items"><a class="link" href="cliente.html">Cliente</a></li>
+                <li class="items"><a class="link" href="mensaje.html">Mensajes</a></li>
+                <li class="items"><a class="link" href="reserva.html">Reserva</a></li>
+        
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="seccion2" class="seccion">
+            <div class="container">
+                <h2 class="subtitulo">Registro de categorias</h2>
+                <form class="form" autocomplete="on">
+                    <div class="grupo-input">
+                        <input class="input" type="number" id="id" placeholder="ID" readonly>
+                        <input class="input" type="text" id="name" placeholder="NOMBRE">
+                        <input class="input" type="text" id="description" placeholder="DESCRIPCION">
+                    </div>
+
+                    <div class="grupo-btn">
+                        <button type="button" class="botones" id="guardar" onclick="guardarCategory()">Guardar</button>
+                        <button type="button" class="botones" id="actualizar"
+                            onclick="editarCategory()">Actualizar</button>
+                        <button class="botones" type="button" onclick="inicial()">Cancelar</button>
+                    </div>
+                </form>
+
+                <div class="tabla-box">
+                    <button class="boton1" onclick="mostrar()">Nuevo Registro</button>
+                    <div class="tabla">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <!-- <th>#</th> -->
+                                    <th>NOMBRE</th>
+                                    <th>DESCRIPCION</th>
+                                    <th colspan="2"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="resultadoCategory">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-pie">
+            <p class="pie">MisionTic 2022 USA G37 E6&copy;</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
