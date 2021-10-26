@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 function traerClient(){
     $.ajax({
-        url: "http://localhost:8080/api/Client/all",
+        url: "http://132.226.44.0:8080/api/Client/all",
         type: "GET",
         datatype: "JSON",
         success:function(respuesta){
@@ -19,7 +19,7 @@ function traerClient(){
 function mostrarClient(){
     $.ajax({
         dataType: 'json',
-        url: "http://localhost:8080/api/Client/all",
+        url: "http://132.226.44.0:8080/api/Client/all",
         type:'GET',
         
         success:function(respuesta) {
@@ -52,7 +52,7 @@ function guardarClient(){
         type:"POST",
         contentType: "application/json; charset=utf-8",
         datatype:"JSON",
-        url: "http://localhost:8080/api/Client/save",
+        url: "http://132.226.44.0:8080/api/Client/save",
         data:JSON.stringify(myData),
         success:function(respuesta){
             $("#resultadoClient").empty();
@@ -85,7 +85,7 @@ function editarClient(){
         contentType: "application/json; charset=utf-8",
         datatype:"JSON",         
         data:dataToSend,         
-        url: "http://localhost:8080/api/Client/update",
+        url: "http://132.226.44.0:8080/api/Client/update",
         success:function(respuesta){
             if($("#id_client").val() =="" && 
                 $("#name_client").val() == "" &&            
@@ -118,7 +118,7 @@ function borrarClient(idClient){
         type:"DELETE",
         contentType:"application/JSON",
         datatype:"JSON",
-        url: "http://localhost:8080/api/Client/"+idClient,
+        url: "http://132.226.44.0:8080/api/Client/"+idClient,
         // data:dataToSend,
         success:function(respuesta){
             $("#resultadoClient").empty();
@@ -140,7 +140,7 @@ function obtenerClientEspecifico(idClient){
 
     $.ajax({
         dataType: 'json',
-        url: "http://localhost:8080/api/Client/"+idClient,
+        url: "http://132.226.44.0:8080/api/Client/"+idClient,
         type:'GET',
         success:function(response) {
             console.log(response);

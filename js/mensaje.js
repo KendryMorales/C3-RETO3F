@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 function traerMessage(){
     $.ajax({
-        url: "http://localhost:8080/api/Message/all",
+        url: "http://132.226.44.0:8080/api/Message/all",
         type: "GET",
         datatype: "JSON",
         success:function(respuesta){
@@ -20,7 +20,7 @@ function traerMessage(){
 function mostrarMessage(){
     $.ajax({
         dataType: 'json',
-        url: "http://localhost:8080/api/Message/all",
+        url: "http://132.226.44.0:8080/api/Message/all",
         type:'GET',
         
         success:function(respuesta) {
@@ -48,7 +48,7 @@ function guardarMessage(){
     };
     $.ajax({
         type:"POST",
-        url: "http://localhost:8080/api/Message/save",
+        url: "http://132.226.44.0:8080/api/Message/save",
         datatype:"JSON",
         contentType: "application/json; charset=utf-8",
         data:JSON.stringify(myData),
@@ -77,7 +77,7 @@ function editarMessage(){
     console.log(myData);     
     let dataToSend=JSON.stringify(myData);     
     $.ajax({         
-        url: "http://localhost:8080/api/Message/update",
+        url: "http://132.226.44.0:8080/api/Message/update",
         type:"PUT",         
         datatype:"JSON",         
         contentType: "application/json; charset=utf-8",
@@ -110,7 +110,7 @@ function borrarMessage(idMessage){
         type:"DELETE",
         contentType: "application/json; charset=utf-8",
         datatype:"JSON",
-        url: "http://localhost:8080/api/Message/"+idMessage,
+        url: "http://132.226.44.0:8080/api/Message/"+idMessage,
         // data:JSON.stringify(myData),
         success:function(respuesta){
             $("#resultadoMessage").empty();
@@ -131,7 +131,7 @@ function obtenerMessageEspecifico(idMessage){
 
     $.ajax({
         dataType:'json',
-        url: "http://localhost:8080/api/Message/"+idMessage,
+        url: "http://132.226.44.0:8080/api/Message/"+idMessage,
         type:'GET',
         success:function(response) {
             console.log(response);
@@ -166,7 +166,7 @@ function mostrar(){
 function llenarCliente() {
     console.log("se esta ejecutando")
     $.ajax({
-        url: "http://localhost:8080/api/Client/all", 
+        url: "http://132.226.44.0:8080/api/Client/all", 
         type: "GET", 
         datatype: "JSON", 
         success: function (respuesta) {
@@ -184,7 +184,7 @@ function llenarCliente() {
 function llenarCabin() {
     console.log("se esta ejecutando")
     $.ajax({
-        url: "http://localhost:8080/api/Cabin/all", 
+        url: "http://132.226.44.0:8080/api/Cabin/all", 
         type: "GET", 
         datatype: "JSON", 
         success: function (respuesta) {

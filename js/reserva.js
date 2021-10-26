@@ -9,7 +9,7 @@ $(document).ready(function () {
 
 function traerReserva() {
     $.ajax({
-        url: "http://localhost:8080/api/Reservation/all",
+        url: "http://132.226.44.0:8080/api/Reservation/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -23,7 +23,7 @@ function traerReserva() {
 function mostarReserva() {
     $.ajax({
         dataType: 'json',
-        url: "http://localhost:8080/api/Reservation/all",
+        url: "http://132.226.44.0:8080/api/Reservation/all",
         type: 'GET',
         success: function (respuesta) {
             let item = respuesta;
@@ -61,7 +61,7 @@ function guardarReserva() {
     };
     console.log(myData)
     $.ajax({
-        url: "http://localhost:8080/api/Reservation/save",
+        url: "http://132.226.44.0:8080/api/Reservation/save",
         type: "POST",
         datatype: "JSON",
         contentType: "application/json; charset=utf-8",
@@ -93,7 +93,7 @@ function editarReserva() {
     console.log(myData);
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://localhost:8080/api/Reservation/update",
+        url: "http://132.226.44.0:8080/api/Reservation/update",
         type: "PUT",
         data: dataToSend,
         contentType: "application/json; charset=utf-8",
@@ -130,7 +130,7 @@ function borrarReserva(idReservation) {
         // data:JSON.stringify(myData),
         contentType: "application/JSON",
         datatype: "JSON",
-        url: "http://localhost:8080/api/Reservation/" + idReservation,
+        url: "http://132.226.44.0:8080/api/Reservation/" + idReservation,
         success: function (respuesta) {
             $("#resultadoReserva").empty();
             traerReserva();
@@ -149,7 +149,7 @@ function obtenerReservaEspecifica(idReservation) {
     $("#actualizar").show(500);
     $.ajax({
         dataType: 'json',
-        url: "http://localhost:8080/api/Reservation/" + idReservation,
+        url: "http://132.226.44.0:8080/api/Reservation/" + idReservation,
         type: 'GET',
         success: function (respuesta) {
             console.log(respuesta);
@@ -190,7 +190,7 @@ function mostrar() {
 function llenarCliente() {
     console.log("se esta ejecutando")
     $.ajax({
-        url: "http://localhost:8080/api/Client/all",
+        url: "http://132.226.44.0:8080/api/Client/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -208,7 +208,7 @@ function llenarCliente() {
 function llenarCabin() {
     console.log("se esta ejecutando")
     $.ajax({
-        url: "http://localhost:8080/api/Cabin/all",
+        url: "http://132.226.44.0:8080/api/Cabin/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {

@@ -48,14 +48,14 @@ body{
 }
 
 .titulo{
+    width: 40%;
+    height: 60px;
     font-family: 'Ephesis', cursive, Georgia, 'Times New Roman', Times, serif;
     color: white;
     font-size: 40px;
     text-align: left;
     padding: 2px;
     padding-left: 30px;
-    width: 40%;
-    height: 60px;
     position: absolute;
     top: 0;
     left: 0;
@@ -64,12 +64,12 @@ body{
 
 .lista{
     width: 60%;
-    height: 100%;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     list-style: none;
     position: absolute;
     top: 0;
@@ -79,24 +79,20 @@ body{
 .sublista{
     z-index: 3;
     width: 100px;
-    /* background-image: radial-gradient(circle at 50% -20.71%, #8ab7cc 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%); */
-    background: #3cb5f2;
+    height: 270px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
+    background: #3cb5f2;
     padding: 10px;
     list-style: none;
+    position: absolute;
+    top: 50px;
 }
 
 .items{
     margin-left: 3px;
-}
-
-.subitems{
-    /* margin-bottom: 5px; */
-    text-decoration: none;
-    cursor: pointer;
 }
 
 .link{
@@ -115,7 +111,8 @@ body{
     display: block;
     width: 100px;
     padding: 10px;
-    text-align: center;
+    text-align: left;
+    cursor: pointer;
 }
 
 .link:hover{
@@ -390,7 +387,6 @@ td {
     text-align: center;
 }
 
-
 .box{
     background: #8ab7cc;
     /* background-image: radial-gradient(circle at 50% -20.71%, #8ab7cc 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%);
@@ -426,7 +422,6 @@ td {
     font-size: 24px;
 }
 
-
 .icono{
     font-size: 100px;
     line-height: 100px;
@@ -445,4 +440,3 @@ td {
     margin: auto;
     flex-wrap: wrap;
 }
-
