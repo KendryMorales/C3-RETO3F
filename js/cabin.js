@@ -7,7 +7,8 @@ $(document).ready(function () {
 
 function traerCabin() {
     $.ajax({
-        url: "http://132.226.44.0:8080/api/Cabin/all",
+        // url: "http://132.226.44.0:8080/api/Cabin/all",
+        url: "http://localhost:8080/api/Cabin/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -21,7 +22,8 @@ function traerCabin() {
 function mostarCabin() {
     $.ajax({
         dataType: 'json',
-        url: "http://132.226.44.0:8080/api/Cabin/all",
+        // url: "http://132.226.44.0:8080/api/Cabin/all",
+        url: "http://localhost:8080/api/Cabin/all",
         type: 'GET',
         success: function (respuesta) {
             let item = respuesta;
@@ -58,7 +60,8 @@ function guardarCabin() {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.44.0:8080/api/Cabin/save",
+        // url: "http://132.226.44.0:8080/api/Cabin/save",
+        url: "http://localhost:8080/api/Cabin/save",
         success: function (respuesta) {
             $("#resultado").empty();
             $("#brand").val("");
@@ -88,7 +91,8 @@ function editarCabin() {
     console.log(myData);
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://132.226.44.0:8080/api/Cabin/update",
+        // url: "http://132.226.44.0:8080/api/Cabin/update",
+        url: "http://localhost:8080/api/Cabin/update",
         type: "PUT",
         datatype: "JSON",
         contentType: "application/json; charset=utf-8",
@@ -126,7 +130,8 @@ function borrarCabin(id) {
         type: "DELETE",
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
-        url: "http://132.226.44.0:8080/api/Cabin/" + id,
+        // url: "http://132.226.44.0:8080/api/Cabin/" + id,
+        url: "http://localhost:8080/api/Cabin/" + id,
         success: function (respuesta) {
             $("#resultado").empty();
             traerCabin();
@@ -145,7 +150,8 @@ function obtenerCabinEspecifica(id) {
 
     $.ajax({
         dataType: 'json',
-        url: "http://132.226.44.0:8080/api/Cabin/" + id,
+        // url: "http://132.226.44.0:8080/api/Cabin/" + id,
+        url: "http://localhost:8080/api/Cabin/" + id,
         type: 'GET',
         success: function (respuesta) {
             console.log(respuesta);
@@ -186,12 +192,13 @@ function mostrar() {
 function llenarCombo() {
     console.log("se esta ejecutando")
     $.ajax({
-        url: "http://132.226.44.0:8080/api/Category/all", 
-        type: "GET", 
-        datatype: "JSON", 
+        // url: "http://132.226.44.0:8080/api/Category/all",
+        url: "http://localhost:8080/api/Category/all",
+        type: "GET",
+        datatype: "JSON",
         success: function (respuesta) {
-            console.log(respuesta); 
-            let $select = $("#idcategoria"); 
+            console.log(respuesta);
+            let $select = $("#idcategoria");
             $.each(respuesta, function (id, name) {
                 $select.append('<option value=' + name.id + '>' + name.name + '</option>');
                 console.log("select " + name.id);

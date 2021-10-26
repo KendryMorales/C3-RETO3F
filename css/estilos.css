@@ -76,20 +76,68 @@ body{
     right: 0;
 }
 
+.sublista{
+    z-index: 3;
+    width: 100px;
+    /* background-image: radial-gradient(circle at 50% -20.71%, #8ab7cc 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%); */
+    background: #3cb5f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 10px;
+    list-style: none;
+}
+
 .items{
-    margin-left: 30px;
+    margin-left: 3px;
+}
+
+.subitems{
+    /* margin-bottom: 5px; */
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .link{
     text-decoration: none;
     color: #fff;
     font-weight: 900;
+    cursor: pointer;
+    display: block;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+}
+.sublink{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
 }
 
 .link:hover{
-    color:#d0dafd;
-    /* color:rgb(214, 226, 43); */
+    background:#7dcefb;
+    transition: 0.3s ease;
 }
+
+.sublink:hover{
+    background:#7dcefb;
+    transition: 0.3s ease;
+}
+
+.items .sublista{
+    display: none;
+    position: absolute;
+}
+
+.items:hover > .sublista{
+    display: block;
+    padding: 0;
+}
+
 
 /** MAIN***/
 .seccion{
@@ -245,7 +293,6 @@ td {
     /* text-align: center; */
 }
 
-
 /* Estilos para el scroll */
 .tabla::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -342,3 +389,60 @@ td {
     width: 300px;
     text-align: center;
 }
+
+
+.box{
+    background: #8ab7cc;
+    /* background-image: radial-gradient(circle at 50% -20.71%, #8ab7cc 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%);
+    background: rgba(73,155,234,1); */
+    background: rgb(102, 169, 231);
+    width: 200px;
+    height: 200px;
+    padding-top: 30px;
+    color: #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px 0  rgb(192, 192, 192);
+}
+
+.link-box{
+    display: block;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+.box:hover{
+    background: #7dcefb;
+    transform: scale(1.1);
+    transition: 0.2s ease;
+}
+
+.subtitulo-box{
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+
+.icono{
+    font-size: 100px;
+    line-height: 100px;
+    margin: auto;
+    display: block;
+    /* background: cornflowerblue; */
+}
+
+.grupo-box{
+    width: 90%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    margin: auto;
+    flex-wrap: wrap;
+}
+

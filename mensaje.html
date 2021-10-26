@@ -8,23 +8,29 @@
     <link type="text/css" rel="stylesheet"  href="css/estilos.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/mensaje.js"></script>
-    <title>Reto2</title>
+    <title>Cabin</title>
 
 
 </head>
 
 <body>
     <header>
-        <h1 class="titulo">Paraiso Tropical</h1>
         <nav class="menu">
             <h1 class="titulo">Paraiso Tropical</h1>
             <ul class="lista">
                 <li class="items"><a class="link" href="index.html">Inicio</a></li>
-                <li class="items"><a class="link" href="categoria.html">Categoria</a></li>
-                <li class="items"><a class="link" href="cabin.html">Cabañas</a></li>
-                <li class="items"><a class="link" href="cliente.html">Cliente</a></li>
-                <li class="items"><a class="link" href="mensaje.html">Mensajes</a></li>
-                <li class="items"><a class="link" href="reserva.html">Reserva</a></li>
+                <li class="items"><a class="link" href="#">Nosotros</a></li>
+                <li class="items"><a class="link" href="#">Cabañas</a></li>
+                <li class="items"><a class="link" href="registro.html">Registros</a>
+                    <ul class="sublista">
+                        <li class="subitems"><a class="sublink" href="categoria.html">Categoria</a></li>
+                        <li class="subitems"><a class="sublink" href="cabin.html">Cabañas</a></li>
+                        <li class="subitems"><a class="sublink" href="cliente.html">Cliente</a></li>
+                        <li class="subitems"><a class="sublink" href="mensaje.html">Mensajes</a></li>
+                        <li class="subitems"><a class="sublink" href="reserva.html">Reserva</a></li>
+                        <li class="subitems"><a class="sublink" href="admin.html">Admin</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -41,23 +47,6 @@
                         <textarea class="textarea" id="text_message" placeholder="Deje su mensaje..."></textarea>
                     </div>
 
-                    <div id="star">
-                        <p class="texto"><strong >¡Valora nuestro servicio!</strong></p>
-                        <div class="clasificacion">
-                            <input class="radio" id="radio5" type="radio" name="estrellas" value="5">
-                            <label class="lbl" for="radio5">&#9733</label>
-                            <input class="radio" id="radio4" type="radio" name="estrellas" value="4">
-                            <label class="lbl" for="radio4">&#9733</label>
-                            <input class="radio" id="radio3" type="radio" name="estrellas" value="3">
-                            <label class="lbl" for="radio3">&#9733</label>
-                            <input class="radio" id="radio2" type="radio" name="estrellas" value="2">
-                            <label class="lbl" for="radio2">&#9733</label>
-                            <input class="radio" id="radio1" type="radio" name="estrellas" value="1">
-                            <label class="lbl" for="radio1">&#9733</label>
-                        </div>
-                    </div>
-                    <br><br>
-                    
                     <div class="grupo-btn">
                         <button type="button" class="botones" id="guardar" onclick="guardarMessage()">Guardar</button>
                         <button type="button" class="botones" id="actualizar"
