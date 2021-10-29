@@ -16,19 +16,21 @@
 <body>
     <header>
         <nav class="menu">
-            <h1 class="titulo">Paraiso Tropical</h1>
+            <h1 class="titulo"><a class="link link-titulo" href="index.html">Paraiso Tropical</a></h1>
+            <h1 class="titulo titulo2"><a class="link link-titulo" href="index.html">P. Tropical</a></h1>
             <ul class="lista">
-                <li class="items"><a class="link" href="index.html">Inicio</a></li>
+                <li class="items"></li>
                 <li class="items"><a class="link" href="#">Nosotros</a></li>
-                <li class="items"><a class="link" href="#">Cabañas</a></li>
                 <li class="items"><a class="link" href="registro.html">Registros</a>
                     <ul class="sublista">
+                        <li class="subitems"><a class="sublink" href="index.html">Inicio</a></li>
                         <li class="subitems"><a class="sublink" href="categoria.html">Categoria</a></li>
-                        <li class="subitems"><a class="sublink" href="cabin.html">Cabañas</a></li>
+                        <li class="subitems"><a class="sublink" href="cabin.html">Cabaña</a></li>
                         <li class="subitems"><a class="sublink" href="cliente.html">Cliente</a></li>
-                        <li class="subitems"><a class="sublink" href="mensaje.html">Mensajes</a></li>
+                        <li class="subitems"><a class="sublink" href="mensaje.html">Mensaje</a></li>
                         <li class="subitems"><a class="sublink" href="reserva.html">Reserva</a></li>
                         <li class="subitems"><a class="sublink" href="admin.html">Admin</a></li>
+                        <li class="subitems"><a class="sublink" href="reporte.html">Reporte</a></li>
                     </ul>
                 </li>
             </ul>
@@ -36,61 +38,81 @@
     </header>
 
     <section class="seccion">
-        <div class="container">
+        <div class="container contenedorbox">
             <!-- <h2 class="subtitulo1">Bienvenido al portal de registros</h2> -->
             <br> <br>
             <div class="grupo-box">
-                <div class="box">
-                    <a class="link-box" href="categoria.html">
-                        <i class="fab fa-avianex icono"></i>
-                        <h3 class="subtitulo-box">CATEGORIA</h3>
-                    </a>
+                <div class="box-contenedor">
+                    <div class="box">
+                        <a class="link-box" href="categoria.html">
+                            <i class="fab fa-avianex icono"></i>
+                            <h3 class="subtitulo-box">CATEGORIA</h3>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="box">
-                    <a class="link-box" href="cabin.html">
-                        <i class="fas fa-home icono"></i>
-                        <!-- <i class="fab fa-pagelines "></i> -->
-                        <h3 class="subtitulo-box">CABAÑA</h3>
-                    </a>
+                <div class="box-contenedor">
+                    <div class="box">
+                        <a class="link-box" href="cabin.html">
+                            <i class="fas fa-home icono"></i>
+                            <!-- <i class="fab fa-pagelines "></i> -->
+                            <h3 class="subtitulo-box">CABAÑA</h3>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="box">
-                    <a class="link-box" href="cliente.html">
-                        <i class="fas fa-address-card icono"></i>
-                        <!-- <i class="fas fa-address-book "></i> -->
-                        <h3 class="subtitulo-box">CLIENTE</h3>
-                    </a>
-                </div>
-            </div>
-            <div class="grupo-box">
-                <div class="box">
-                    <a class="link-box" href="mensaje.html">
-                        <i class="fas fa-comment-dots icono"></i>
-                        <h3 class="subtitulo-box">MENSAJE</h3>
-                    </a>
+                <div class="box-contenedor">
+                    <div class="box">
+                        <a class="link-box" href="cliente.html">
+                            <i class="fas fa-address-card icono"></i>
+                            <!-- <i class="fas fa-address-book "></i> -->
+                            <h3 class="subtitulo-box">CLIENTE</h3>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="box">
-                    <a class="link-box" href="reserva.html">
-                        <i class="fas fa-house-user icono"></i>
-                        <!-- <i class="fas fa-address-card "></i> -->
-                        <h3 class="subtitulo-box">RESERVA</h3>
-                    </a>
+                <div class="box-contenedor">
+                    <div class="box">
+                        <a class="link-box" href="mensaje.html">
+                            <i class="fas fa-comment-dots icono"></i>
+                            <h3 class="subtitulo-box">MENSAJE</h3>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="box">
-                    <a class="link-box" href="admin.html">
-                        <i class="fas fa-users icono"></i>
-                        <!-- <i class="fas fa-star"></i> -->
-                        <h3 class="subtitulo-box">ADMIN</h3>
-                    </a>
+                <div class="box-contenedor">
+                    <div class="box">
+                        <a class="link-box" href="reserva.html">
+                            <i class="fas fa-house-user icono"></i>
+                            <!-- <i class="fas fa-address-card "></i> -->
+                            <h3 class="subtitulo-box">RESERVA</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="box-contenedor">
+                    <div class="box">
+                        <a class="link-box" href="admin.html">
+                            <i class="fas fa-users icono"></i>
+                            <!-- <i class="fas fa-star"></i> -->
+                            <h3 class="subtitulo-box">ADMIN</h3>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="box-contenedor">
+                    <div class="box">
+                        <a class="link-box" href="reporte.html">
+                            <i class="fas fa-address-book icono"></i>
+                            <h3 class="subtitulo-box">REPORTE</h3>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-
+    
+    
+    <br><br>
     <footer class="footer">
         <div class="footer-pie">
             <p class="pie">MisionTic 2022 USA G37 E6&copy;</p>

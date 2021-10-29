@@ -232,7 +232,7 @@ function FormatoFecha(fechaInicio) {
 
     // vdia = vdia<10? "0"+vdia: vdia;
     // vmes = vmes<10 ? "0"+vmes: vmes;
-    return vdia + "/" + vmes + "/" + vanio;
+    return  vanio + "/" + vmes + "/" +  vdia;
 }
 
 // let date = new Date()
