@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 function traerAdmin(){
     $.ajax({
-        url: "http://localhost:8080/api/Admin/all",
+        url: "http://132.226.44.0:8080/api/Admin/all",
         type: "GET",
         datatype: "JSON",
         success:function(respuesta){
@@ -19,7 +19,7 @@ function traerAdmin(){
 function mostrarAdmin(){
     $.ajax({
         dataType: 'json',
-        url: "http://localhost:8080/api/Admin/all",
+        url: "http://132.226.44.0:8080/api/Admin/all",
         type:'GET',
         
         success:function(respuesta) {
@@ -50,7 +50,7 @@ function guardarAdmin(){
         type:"POST",
         contentType: "application/json; charset=utf-8",
         datatype:"JSON",
-        url: "http://localhost:8080/api/Admin/save",
+        url: "http://132.226.44.0:8080/api/Admin/save",
         data:JSON.stringify(myData),
         success:function(respuesta){
             $("#resultado").empty();
@@ -81,7 +81,7 @@ function editarAdmin(){
         contentType: "application/json; charset=utf-8",
         datatype:"JSON",         
         data:dataToSend,         
-        url: "http://localhost:8080/api/Admin/update",
+        url: "http://132.226.44.0:8080/api/Admin/update",
         success:function(respuesta){
             if($("#id_Admin").val() =="" && 
                 $("#name_Admin").val() == "" &&            
@@ -112,7 +112,7 @@ function borrarAdmin(idAdmin){
         type:"DELETE",
         contentType:"application/JSON",
         datatype:"JSON",
-        url: "http://localhost:8080/api/Admin/"+idAdmin,
+        url: "http://132.226.44.0:8080/api/Admin/"+idAdmin,
         // data:dataToSend,
         success:function(respuesta){
             $("#resultado").empty();
@@ -134,7 +134,7 @@ function obtenerAdminEspecifico(idAdmin){
 
     $.ajax({
         dataType: 'json',
-        url: "http://localhost:8080/api/Admin/"+idAdmin,
+        url: "http://132.226.44.0:8080/api/Admin/"+idAdmin,
         type:'GET',
         success:function(response) {
             console.log(response);

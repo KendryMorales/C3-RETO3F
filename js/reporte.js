@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 function mostarRStatus() {
     $.ajax({
-        url: "http://localhost:8080/api/Reservation/report-status",
+        url: "http://132.226.44.0:8080/api/Reservation/report-status",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -28,7 +28,7 @@ function mostarRStatus() {
 function mostarTopCliente() {
     $.ajax({
         dataType: 'json',
-        url: "http://localhost:8080/api/Reservation/report-clients",
+        url: "http://132.226.44.0:8080/api/Reservation/report-clients",
         type: 'GET',
         success: function (respuesta) {
             let item = respuesta;
@@ -56,7 +56,7 @@ function mostrarReporteDate() {
     console.log(fechaCierre);
 
     $.ajax({
-        url: "http://localhost:8080/api/Reservation/report-dates/" + fechaInicio + "/" + fechaCierre,
+        url: "http://132.226.44.0:8080/api/Reservation/report-dates/" + fechaInicio + "/" + fechaCierre,
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
