@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 function traerCategory(){
     $.ajax({
-        url: "http://132.226.44.0:8080/api/Category/all",
+        url: "http://localhost:8080/api/Category/all",
         type: "GET",
         datatype: "JSON",
         success:function(respuesta){
@@ -20,7 +20,7 @@ function traerCategory(){
 function mostarCategory(respuesta){
     $.ajax({
         dataType: 'json',
-        url: "http://132.226.44.0:8080/api/Category/all",
+        url: "http://localhost:8080/api/Category/all",
         type:'GET',        
         success:function(respuesta) {
             let item=respuesta;
@@ -46,7 +46,7 @@ function guardarCategory(){
         description:$("#description").val()
     };
     $.ajax({
-        url: "http://132.226.44.0:8080/api/Category/save",
+        url: "http://localhost:8080/api/Category/save",
         type:"POST",
         contentType: "application/json; charset=utf-8",
         datatype:"JSON",
@@ -75,7 +75,7 @@ function editarCategory(){
     };     
     console.log(myData);     
     $.ajax({         
-        url: "http://132.226.44.0:8080/api/Category/update",
+        url: "http://localhost:8080/api/Category/update",
         type:"PUT",         
         datatype:"JSON",
         contentType: "application/json; charset=utf-8",
@@ -103,7 +103,7 @@ function editarCategory(){
 
 function borrarCategory(id){
     $.ajax({
-        url: "http://132.226.44.0:8080/api/Category/"+id,
+        url: "http://localhost:8080/api/Category/"+id,
         type:"DELETE",
         datatype:"JSON",
         contentType: "application/json; charset=utf-8",        
@@ -128,7 +128,7 @@ function obtenerCategoryEspecifica(id){
     $.ajax({
         type:'GET',
         dataType: 'json',
-        url: "http://132.226.44.0:8080/api/Category/"+id,
+        url: "http://localhost:8080/api/Category/"+id,
         success:function(respuesta) {
             console.log(respuesta);
             let item=respuesta;

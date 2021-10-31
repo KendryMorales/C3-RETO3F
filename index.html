@@ -6,18 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="css/estilos.css">
+    <link type="text/css" rel="stylesheet" href="css/index.css">
     <title>Cabin</title>
 
 
 </head>
 
 <body>
-    <header>
+    <header class="header-index">
         <nav class="menu-index">
             <h1 class="titulo"><a class="link link-titulo" href="index.html">Paraiso Tropical</a></h1>
             <h1 class="titulo titulo2"><a class="link link-titulo" href="index.html">P. Tropical</a></h1>            
             <ul class="lista">
-                <li class="items"><a class="link" href="#">Nosotros</a></li>
+                <li class="items"><a class="link" href="index.html#seccion-index">Nosotros</a></li>
                 <li class="items"><a class="link" href="registro.html">Registros</a>
                     <ul class="sublista">
                         <li class="subitems"><a class="sublink" href="index.html">Inicio</a></li>
@@ -37,15 +38,48 @@
     </header>
 
     <main>
+        <section id="seccion-index" class="seccion">
+            <div class="container">
+                <h2 class="subtitulo">Nuestras cabañas</h2>
+                <div class="contenedor-index">                    
+                    <div class="texto-index">
+                        <h3 class="subtitulo-index">Cabañas Paraisos</h3>
+                        <p class="texto-index1">Las cabañas paraiso son el producto estrella de todas nuestras marcas, pertenece a la linea premium. Son cabañas muy confortable, con un diseño exquisto, con una hermosa vista al mar. Contamos con las siguientes categorias: 
+                        </p>
+                        <ul class="categoria-cabin">
+                            <li class="items">Personal: Una habitacion</li>
+                            <li class="items">Dual: Dos habitaciones</li>
+                            <li class="items">Familiar: Cuatro habitaciones</li>
+                        </ul>
+                        <a href="reserva.html" class="btn-ver">Reservar</a>                        
+                    </div>
+                    <img src="'../img/paraiso.jpg'" class="img" alt="imagen">
+                </div>
 
+                <div class="contenedor-index contenedor-index1">                    
+                    <div class="texto-index">
+                        <h3 class="subtitulo-index">Cabañas Tropical</h3>
+                        <p class="texto-index1">Las cabañas tropical son el producto estrella de todas nuestras marcas, pertenece a la linea estandar. Son cabañas muy confortable, con un diseño exquisto, con una hermosa vista al mar. Contamos con las siguientes categorias: 
+                        </p>
+                        <ul class="categoria-cabin">
+                            <li class="items">Personal: Una habitacion</li>
+                            <li class="items">Dual: Dos habitaciones</li>
+                            <li class="items">Familiar: Cuatro habitaciones</li>
+                        </ul>
+                        <a href="reserva.html" class="btn-ver">Reservar</a>                        
+                    </div>
+                    <img src="'../img/tropical.jpg'" class="img" alt="imagen">
+                </div>
+            </div>
+        </section>
     </main>
 
 
-    <!-- <footer>
-        <div class="footer">
-            <p>Grupo G37 - Equipo #6</p>
+    <footer class="footer">
+        <div class="footer-pie">
+            <p class="pie">Mision Tic 2022 USA G37 E6 - Kendry Morales&copy;</p>
         </div>
-    </footer> -->
+    </footer>
 
 
 </body>

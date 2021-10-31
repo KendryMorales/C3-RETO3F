@@ -4,12 +4,13 @@ $(document).ready(function () {
     llenarCliente();
     inicial();
     // format:'YY-MM-DD HH:mm:ss'       
+    fechaActual();
 });
 
 
 function traerReserva() {
     $.ajax({
-        url: "http://132.226.44.0:8080/api/Reservation/all",
+        url: "http://localhost:8080/api/Reservation/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -23,7 +24,7 @@ function traerReserva() {
 function mostarReserva() {
     $.ajax({
         dataType: 'json',
-        url: "http://132.226.44.0:8080/api/Reservation/all",
+        url: "http://localhost:8080/api/Reservation/all",
         type: 'GET',
         success: function (respuesta) {
             let item = respuesta;
@@ -32,6 +33,7 @@ function mostarReserva() {
                 $("#resultadoReserva").append("<td>" + item[i].idReservation + "</td>");
                 $("#resultadoReserva").append("<td>" + FormatoFecha(item[i].startDate) + "</td>");
                 $("#resultadoReserva").append("<td>" + FormatoFecha(item[i].devolutionDate) + "</td>");
+                $("#resultadoReserva").append("<td>" + item[i].status + "</td>");
                 $("#resultadoReserva").append("<td>" + item[i].cabin.name + "</td>");
                 $("#resultadoReserva").append("<td>" + item[i].client.idClient + "</td>");
                 $("#resultadoReserva").append("<td>" + item[i].client.name + "</td>");
@@ -48,30 +50,25 @@ function mostarReserva() {
     });
 }
 
-// value = new Date(parseInt(value.replace("/Date(", "").replace(")/",""), 10));
-
 function guardarReserva() {
     let myData = {
         startDate: $("#inicio").val(),
         devolutionDate: $("#devolucion").val(),
+        status: $("#estado").val(),
         cabin: { id: +$("#idcabin_reserva").val() },
         client: { idClient: +$("#idclient_reserva").val() },
-        // socre: $("input[name='estrellas']:checked", ".form").val()
-        // socre: validarScore(),
+        score: $(".radio :checked").val(),
     };
     console.log(myData)
     $.ajax({
-        url: "http://132.226.44.0:8080/api/Reservation/save",
+        url: "http://localhost:8080/api/Reservation/save",
         type: "POST",
         datatype: "JSON",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(myData),
         success: function (respuesta) {
             $("#resultadoReserva").empty();
-            $("#inicio").val("");
-            $("#devolucion").val("");
-            $("#idcabin_reserva").val("");
-            $("#idclient_reserva").val("");
+
             traerReserva();
             alert("¡Se ha registrado la informacion!");
             inicial();
@@ -87,13 +84,14 @@ function editarReserva() {
         idReservation: $("#id").val(),
         startDate: $("#inicio").val(),
         devolutionDate: $("#devolucion").val(),
+        status: $("#estado").val(),
         cabin: { id: +$("#idcabin_reserva").val() },
         client: { idClient: +$("#idclient_reserva").val() },
     };
     console.log(myData);
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://132.226.44.0:8080/api/Reservation/update",
+        url: "http://localhost:8080/api/Reservation/update",
         type: "PUT",
         data: dataToSend,
         contentType: "application/json; charset=utf-8",
@@ -115,7 +113,6 @@ function editarReserva() {
                 traerReserva();
                 alert("¡Se ha actualizado el registro!");
                 inicial();
-                $("#id").removeAttr('disabled');
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -130,7 +127,7 @@ function borrarReserva(idReservation) {
         // data:JSON.stringify(myData),
         contentType: "application/JSON",
         datatype: "JSON",
-        url: "http://132.226.44.0:8080/api/Reservation/" + idReservation,
+        url: "http://localhost:8080/api/Reservation/" + idReservation,
         success: function (respuesta) {
             $("#resultadoReserva").empty();
             traerReserva();
@@ -143,20 +140,24 @@ function borrarReserva(idReservation) {
 }
 
 function obtenerReservaEspecifica(idReservation) {
-    $("#id").attr('disabled', 'disabled');
+    $(".estadoReserva").removeAttr('disabled');
     mostrar();
     $("#guardar").hide();
     $("#actualizar").show(500);
+    var fechaInicio = document.getElementById("inicio").value;
+    var fechaCierre = document.getElementById("devolucion").value;
+
     $.ajax({
         dataType: 'json',
-        url: "http://132.226.44.0:8080/api/Reservation/" + idReservation,
+        url: "http://localhost:8080/api/Reservation/" + idReservation,
         type: 'GET',
         success: function (respuesta) {
             console.log(respuesta);
             let item = respuesta;
             $("#id").val(item.idReservation);
-            $("#inicio").val(item.startDate);
-            $("#devolucion").val(item.devolutionDate);
+            $("#inicio").val(fechaInicio);
+            $("#devolucion").val(fechaCierre);
+            $("#estado").val(item.status);
             $("#idcabin_reserva").val(item.cabin.id);
             $("#idclient_reserva").val(item.client.idClient);
         },
@@ -170,7 +171,8 @@ function inicial() {
     $(".form").hide();
     $("#id").hide();
     $(".tabla-box").show(500);
-    $("#id").removeAttr('disabled');
+    $(".estadoReserva").attr('disabled', 'disabled');
+
 }
 
 function mostrar() {
@@ -180,17 +182,18 @@ function mostrar() {
     $("#actualizar").hide();
 
     $("#id").val(""),
-        $("#inicio").val(""),
-        $("#devolucion").val(""),
-        $("#idclient_reserva").val(""),
-        $("#idcabin_reserva").val(""),
-        $(".radio").prop("checked", false);
+    $("#inicio").val(""),
+    $("#devolucion").val(""),
+    $("#estado").val(""),
+    $("#idclient_reserva").val(""),
+    $("#idcabin_reserva").val(""),
+    $(".radio").prop("checked", false);
 }
 
 function llenarCliente() {
     console.log("se esta ejecutando")
     $.ajax({
-        url: "http://132.226.44.0:8080/api/Client/all",
+        url: "http://localhost:8080/api/Client/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -208,7 +211,7 @@ function llenarCliente() {
 function llenarCabin() {
     console.log("se esta ejecutando")
     $.ajax({
-        url: "http://132.226.44.0:8080/api/Cabin/all",
+        url: "http://localhost:8080/api/Cabin/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -222,7 +225,6 @@ function llenarCabin() {
     })
 }
 
-
 function FormatoFecha(fechaInicio) {
     var vFecha = new Date(fechaInicio);
 
@@ -230,79 +232,41 @@ function FormatoFecha(fechaInicio) {
     var vmes = vFecha.getMonth() + 1;
     var vanio = vFecha.getFullYear();
 
-    // vdia = vdia<10? "0"+vdia: vdia;
-    // vmes = vmes<10 ? "0"+vmes: vmes;
-    return  vanio + "/" + vmes + "/" +  vdia;
+    vdia = ('0'+vdia).slice(-2);
+    vmes = ('0'+vmes).slice(-2);
+
+    return vanio + "/" + vmes + "/" + vdia;
 }
 
-// let date = new Date()
+function fechaActual() {
+    var vFecha = new Date();
 
-// let day = date.getDate()
-// let month = date.getMonth() + 1
-// let year = date.getFullYear()
+    var vdia = vFecha.getDate();
+    var vmes = vFecha.getMonth() + 1;
+    var vanio = vFecha.getFullYear();
 
-// if(month < 10){
-//   console.log(`${day}-0${month}-${year}`)
-// }else{
-//   console.log(`${day}-${month}-${year}`)
-// }
+    console.log("Hoy es: ", vanio + "/" + vmes + "/" + vdia)
+}
 
-
-// <script>
-//   var myDate = new Date();
-//   var thisMonth = new Date(myDate.getFullYear(), myDate.getMonth(), 1);
-//   var nextMonth = new Date(myDate.getFullYear(), myDate.getMonth() + 2, 0);
-
-//   console.log("Formatted date start: " + formatDate(thisMonth));
-//   console.log("Formatted date end: " + formatDate(nextMonth));
-
-//   function padLeft(n){
-//     return ("00" + n).slice(-2);
-//   }
-
-//   function formatDate(){        
-//     var d = new Date,
-//         dformat = [ padLeft(d.getDate()),
-//                     padLeft(d.getMonth()+1),
-//                     d.getFullYear()
-//                     ].join(' ');
-//      return dformat
-//   }
-
-// </script>
-
-// function validarScore() {
-//     var resultado = 0;
-//     if ($("#radio1").prop("checked", true)) {
-//         resultado = 1;
-//         alert(resultado);
-//         return resultado;
-//     } else {
-//         if ($("#radio2").prop("checked", true)) {
-//             resultado = 2;
-//             alert(resultado);
-//             return resultado;
-//         } else {
-//             if ($("#radio3").prop("checked", true)) {
-//                 resultado = 3;
-//                 alert(resultado);
-//                 return resultado;
-//             } else {
-//                 if ($("#radio").prop("checked", true)) {
-//                     resultado = 4;
-//                     alert(resultado);
-//                     return resultado;
-//                 } else {
-//                     if ($("#radio5").prop("checked", true)) {
-//                         resultado = 5;
-//                         alert(resultado);
-//                         return resultado;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-//     return resultado;
-// }
-
-
+function validarScore(a) {    
+    if (document.getElementById("radio1").checked) {
+        a = 1;
+        alert("Ha seleccionado 1");
+    }
+    if (document.getElementById("radio1").checked) {
+        a=2;
+        alert("Ha seleccionado 2");
+    }
+    if (document.getElementById("radio3").checked) {
+        a=3;
+        alert("Ha seleccionado 3");
+    }
+    if (document.getElementById("radio4").checked) {
+        a=4;
+        alert("Ha seleccionado 4");
+    }
+    if (document.getElementById("radio5").checked) {
+        a=5;
+        alert("Ha seleccionado 5");
+    }
+}

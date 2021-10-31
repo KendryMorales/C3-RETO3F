@@ -8,10 +8,6 @@
     <link type="text/css" rel="stylesheet"  href="css/estilos.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/reporte.js"></script>
-
-    <!-- Para el calendario  -->
-
-
     <title>Cabin</title>
 
 
@@ -23,7 +19,7 @@
         <h1 class="titulo titulo2"><a class="link link-titulo" href="index.html">P. Tropical</a></h1>
         <ul class="lista">
             <li class="items"></li>
-            <li class="items"><a class="link" href="#">Nosotros</a></li>
+            <li class="items"><a class="link" href="index.html#seccion-index">Nosotros</a></li>
             <li class="items"><a class="link" href="registro.html">Registros</a>
                 <ul class="sublista">
                     <li class="subitems"><a class="sublink" href="index.html">Inicio</a></li>
@@ -48,8 +44,8 @@
                 
                 <div class="tabla-box">
                     <div class="tabla">
-                        <h2 class="subtitulo">Reportes de Status</h2>
-                        <br> <br>
+                        <h2 class="subtitulo">Reportes por Status</h2>
+                        <!-- <br> <br> -->
                         <table>
                             <thead>
                                 <tr>
@@ -67,8 +63,7 @@
                 </div>
 
                 <div class="tabla-box1">
-                    <h2 class="subtitulo">Reportes de clientes</h2>
-                    <br> <br>
+                    <h2 class="subtitulo">Top de clientes</h2>
                     <div class="tabla">
                         <table>
                             <thead>
@@ -77,9 +72,6 @@
                                     <th>NOMBRE</th>
                                     <th>EMAIL</th>
                                     <th>EDAD</th>
-                                    <th>CANCELADOS</th>
-                                    <th>CANCELADOS</th>
-                                    <!-- <th colspan="2"></th> -->
                                 </tr>
                             </thead>
 
@@ -90,9 +82,39 @@
                     </div>
                 </div>
 
+                <div class="tabla-box2">
+                    <h2 class="subtitulo">Reportes por fecha</h2>
+                    <form class="form" autocomplete="on">
+                        <div class="grupo-input">                        
+                        <input class="input" type="date" id="inicio">
+                        <input class="input" type="date" id="fin">
+                        </div>
+                        <div class="grupo-btn">
+                            <button class="boton1" type="button" onclick="mostrarReporteDate()">Calcular</button>
+                        </div>
+                    </form>
+                    <br><br>
+                    <div class="tabla">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>F. INICIO</th>                  
+                                    <th>F. FIN</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="resultadoRDate">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
                 <div class="grupo-btnReporte">
                     <button class="boton2" onclick="mostrarStatus()">Reporte Status</button>
-                    <button class="boton2" onclick="mostrarCliente()">Reporte Cliente</button>
+                    <button class="boton2" onclick="mostrarCliente()">Top Cliente</button>
+                    <button class="boton2" onclick="mostrarDate()">Reporte fecha</button>
                 </div>
 
             </div>

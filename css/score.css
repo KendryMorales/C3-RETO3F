@@ -1,0 +1,49 @@
+/* Ranking Score */
+#star {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    height: 100px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cfcbcb;
+    border-radius: 5px;
+}
+
+.clasificacion{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.radio{
+    display: none;
+}
+
+#star input + label{
+    float: right;
+    cursor: pointer;
+    font-size: 40px;
+    margin-left: 10px;
+    color: #838383;
+    transition: all 0.2s ease;
+    
+}
+
+#star label:hover ~ label,
+#star input:focus ~ label,
+#star input:checked ~ label {
+  color: #fd4;
+}
+
+#star label:active{
+    transform: scale(0.8);
+    transition: 0.3s ease;
+}
+
+#star input#radio5:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 5px #952;
+}

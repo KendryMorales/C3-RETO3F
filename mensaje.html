@@ -20,7 +20,7 @@
             <h1 class="titulo titulo2"><a class="link link-titulo" href="index.html">P. Tropical</a></h1>
             <ul class="lista">
                 <li class="items"></li>
-                <li class="items"><a class="link" href="#">Nosotros</a></li>
+                <li class="items"><a class="link" href="index.html#seccion-index">Nosotros</a></li>
                 <li class="items"><a class="link" href="registro.html">Registros</a>
                     <ul class="sublista">
                         <li class="subitems"><a class="sublink" href="index.html">Inicio</a></li>
@@ -43,7 +43,7 @@
                 <h2 class="subtitulo">Registro de mensajes</h2>
                 <form class="form" autocomplete="on">
                     <div class="grupo-input">
-                        <input class="input" type="number" id="id_message" placeholder="ID" readonly>
+                        <input class="input" type="number" id="id_message" placeholder="Id" readonly>
                         <select class="input" type="number" id="cabin_message"></select>
                         <select class="input" type="number" id="client_message"></select>
                         <textarea class="textarea" id="text_message" placeholder="Deje su mensaje..."></textarea>
@@ -53,14 +53,16 @@
                         <button type="button" class="botones" id="guardar" onclick="guardarMessage()">Guardar</button>
                         <button type="button" class="botones" id="actualizar"
                             onclick="editarMessage()">Actualizar</button>
-                        <button class="botones" type="button" onclick="inicial()">Cancelar</button>
+                        <button class="botones btnCancelar" type="button" onclick="inicial()">Cancelar</button>
 
                     </div>
                     
                 </form>
 
                 <div class="tabla-box">
-                    <button class="boton1" onclick="mostrar()">Nuevo Registro</button>
+                    <div class="grupo-btn grupo-btn1">
+                        <button class="boton1" onclick="mostrar()">Nuevo</button>
+                        </div>
                     <div class="tabla">
                         <table>
                             <thead>
